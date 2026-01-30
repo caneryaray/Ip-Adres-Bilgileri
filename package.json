@@ -1,0 +1,12 @@
+{
+  "name": "ip-address-finder",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-modules index.js",
+    "dev": "npx http-server"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
+  }
+}
