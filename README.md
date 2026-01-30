@@ -1,64 +1,81 @@
 <img width="687" height="738" alt="image" src="https://github.com/user-attachments/assets/c93392ac-4c3c-4806-bd21-a242f10ad8f7" />
 
-IP Coğrafi Konum Belirleme
+IP Konum Bilgisi Uygulaması
 
-Bu proje, kullanıcının IP adresini tespit ederek bakanlığı ve ağ satın almayı görüntüleyen basit bir web uygulamasıdır. Uygulama, harici API servislerinden alınan veriler, JavaScript ve DOM manipülasyonu kullanılarak kullanıcının kart (kart) yapısı
+Bu proje, kullanıcının IP adresini otomatik olarak tespit eden ve bu IP bilgilerine bağlı departmanın konumsal, saat diliminde ve kullanıcının kullanabileceği görsel bir kart yapısı içerisinde sunan bir web uygulamasıdır. Uygulama, JavaScript kullanılarak geliştirilmiş olup harici REST API servislerinden gerçek zamanlı veri çekmektedir.
 
-Projenin Amacı.
+Projenin Amacı ve Kapsamı
 
-Bu işlemi gerçekleştirme amacı, modern JavaScript özellikleri kullanma.
+Bu uyumlu temel amaç, modern JavaScript geliştirme yaklaşımlarını kullanarak gerçek bir API ile alma bilgilerini ve API'den gelen verileri anlamlı, okunabilir ve kullanıcı dostu bir sürüm haline getirmektir.
 
-Asenkron veri çek
+Proje kapsamında özellikle aşağıdaki konular üzerinde durulmuştur:
 
-Axios
+Asenkron programlama mantığı (asenkron / beklemede)
 
-Dinamik DOM öğeleri
+Axios yüklemesi ile HTTP GET işlemlerini gönderme
 
-API'den gelen veriyi programlarda geliştirilebilir şekilde göst
+Harici API servisleriyle veri alışverişi
 
+JavaScript ile dinamik DOM öğeleri oluşturma
 
+API'den dönen verilere uygun HTML yapısını yapılandırma
 
-Kullan
+Kullanılan Teknolojiler ve Araçlar
 
-JavaScript (ES6+)
+JavaScript (ES6 ve üzeri)
 
-Axios
+Axios (HTTP istekleri için)
 
-HTML DOM API
+HTML5 DOM API
 
-REST API
+RESTful API servisleri
 
 Kullandığımız API Servisleri
 
+Uygulama, aşağıdaki servisleri kullanarak veri elde etmektedir:
 
+Kullanıcının IP adresini almak için:
 https://apis.ergineer.com/ipadresim
 
-IP dağıtımına bağlı konum bilgileri:
+IP bilgilerine bağlı olarak konum ve ağ bilgilerini almak için:
 https://apis.ergineer.com/ipgeoapi/{ipAdresiniz}
 
+Uygulamanın Çalışma Mantığı
 
+ipAdresimiAl()bölümü, kullanıcının aktif IP adresini API üzerinden alır.
 
-Kullanıcının IP adresi ipAdresimiAl()fonksiyonu ile alınır.
+getData()bölümü, alınan IP adresini kullanarak konum ve ağ birleştirme içeren ayrıntılı veriyi API'den çeker.
 
-getData()fon
+API'den dönen veri nesnesi cardOlustur(data)fonksiyonuna parametre olarak gönderilir.
 
-Gelen verilercardOlustur(data)fonksiyon
+Bu fonksiyon, DOM metotlarını kullanarak bir bilgi kartı (kart) oluşturur.
 
-Oluşturulan kart sayfasına ekl
+Oluşturulan kart, sayfa üzerinde kişisel olarak görsel olarak sunulur.
 
-Görüntülenen Bilgile
+Kart İçeriğinde Gösterilen Bilgiler
 
-IP adresi
+Oluşturulan kart bileşeni aşağıdaki bilgileri içermektedir:
 
-Ülke adı ve ülke
+Kullanıcının IP adresi
 
-Enlem ve boylam
+Ülke adı ve ülke kodu
 
-Şehir
+Coğrafi bilgi ve boylam bilgileri
 
-Saat dilimi
+Şehirler
 
-Ülke
+Bulunulan bölge saat dilimi
 
-Proje, herhangi bir modern tarayıcı ve bir yerel web sunucusu üzerinden çalıştırılabilir
+Bizim para birimi
+
+İnternet servis sağlayıcısı (İSS)
+
+İlgili bilgilere ait bayrak görseli
+
+Kurulum ve çalışma
+
+Projeyi çalıştırmak için dosyaları bir yerel web sunucusu üzerinden çalıştırmanız yeterlidir.
+(Örneğin VS Code Live Server eklentisi mevcuttur.)
+
+Not: Harici API servisleri internet bağlantısı gerektirir.
 
